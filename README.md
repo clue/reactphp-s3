@@ -16,7 +16,7 @@ your S3 file storage:
 
 ```php
 $loop = React\EventLoop\Factory::create();
-$browser = new Clue\React\Buzz\Browser($loop);
+$browser = new React\Http\Browser($loop);
 
 $s3 = new Clue\React\S3\Client($browser, $key, $secret, $bucket, $region, $endpoint);
 
