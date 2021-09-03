@@ -15,16 +15,17 @@ Once [installed](#install), you can use the following code to read a file from
 your S3 file storage:
 
 ```php
-$loop = React\EventLoop\Factory::create();
-$browser = new React\Http\Browser($loop);
+<?php
 
-$s3 = new Clue\React\S3\Client($browser, $key, $secret, $bucket, $region, $endpoint);
+require __DIR__ . '/vendor/autoload.php';
+
+$s3 = new Clue\React\S3\S3Client($key, $secret, $bucket, $region, $endpoint);
 
 $s3->read('example.txt')->then(function (string $contents) {
     echo $contents;
+}, function (Exception $e) {
+    echo 'Error: ' . $e->getMessage() . PHP_EOL;
 });
-
-$loop->run();
 ```
 
 ## Install
