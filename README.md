@@ -96,7 +96,7 @@ $s3->read($path)->then(
         // file contents received
     },
     function (Exception $e) {
-        // an error occured while executing the request
+        // an error occurred while executing the request
     }
 });
 ```
@@ -172,7 +172,7 @@ try {
     $contents = Block\await($promise, Loop::get());
     // file contents received
 } catch (Exception $e) {
-    // an error occured while executing the request
+    // an error occurred while executing the request
 }
 ```
 
